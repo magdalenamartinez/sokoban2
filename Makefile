@@ -1,17 +1,21 @@
 ##
 ## June 2024
 ## Magdalena Martinez Sanchez
-## MD5
+## sokoban
 ## Makefile
 ##
 
-NAME	=	MD5
+NAME	=	my_sokoban
 
 
 
 INCLUDE	=	-I ./include/
 
 SRC	= 	src/main.c	\
+		src/open.c	\
+		src/map.c	\
+		src/utilities.c	\
+		src/struct.c	\
 
 
 OBJ	=	$(SRC:.c=.o)
