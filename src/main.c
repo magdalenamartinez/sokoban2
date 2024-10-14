@@ -21,12 +21,15 @@ int main(int argc, char** argv)
         } else {
             return EXIT_FAILURE;
         }
-        //Ya hemos comprobado que el mapa tiene simbolos correctos
-        //ahora pasamos al siguiente paso
-        //primero rellenamos el mapa con el buffer
-        //contamos filas
-        //contamos columnas segun cada fila (el mapa no tiene q ser cuadrado)
+        //comprobado los simbolos del mapa
+        //mapa relleno con buffer
+        //memoria reservada y liberada
+        //filas y columnas segun filas contadas
         //encontramos posicion del jugador
+
+        //ahora tenemos que poner el raton
+        //en la posicion del jugador
+        //y hacer que se mueva la P
     }
     return EXIT_SUCCESS;
 }

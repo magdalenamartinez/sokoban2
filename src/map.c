@@ -25,9 +25,7 @@ int is_map(char* buffer)
 
 void fill_map(map_t* map, char* buffer)
 {
-    int i = 0;
-    int j = 0;
-    int n = 0;
+    int i = 0, j = 0, n = 0;
     map->map = (char**) malloc(sizeof(char*) * map->rows);    
     if (map->map == NULL) {
         free_struct(map);
@@ -40,16 +38,19 @@ void fill_map(map_t* map, char* buffer)
             free_struct(map);
             exit(EXIT_FAILURE);
         }
-        for (j = 0; j < map->cols[i]; j++) {
+        for (j = 0; j < map->cols[i] + 1; j++) {
             map->map[i][j] = buffer[n++];
         }
         map->map[i][j] = '\0';
         i++;
     }
-    
-    for (i = 0; i < map->rows; i++) {
-        for (j = 0; j < map->cols[i]; j++) {
-            printf("%c", map->map[i][j]);
-        }
+}
+
+void print_map(map_t* map)
+{
+    clear();
+    for (int i = 0; i < map->rows; i++) {
+        mvprintw(i, 0, "%s", map->map[i]); // Imprime cada línea del mapa en la terminal
     }
+    refresh();
 }
